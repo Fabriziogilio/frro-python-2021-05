@@ -1,6 +1,9 @@
 """Comparaciones Encadenadas, Cantidad Arbitraria de Parámetros, Recursividad."""
 
 
+from functools import singledispatch
+
+
 def maximo_encadenado(a: float, b: float, c: float) -> float:
     """Toma 3 números y devuelve el máximo.
 
@@ -9,10 +12,9 @@ def maximo_encadenado(a: float, b: float, c: float) -> float:
     """
     if b < a > c:
         return a
-    elif a < b > c:
+    elif a < b > c: #puede usarse un if en vez de elif
         return b
-    elif a < c > b:
-        return c
+    return c
 
 
 
@@ -64,8 +66,11 @@ assert maximo_arbitrario(24, 9, 18, 30) == 30
 
 def maximo_recursivo(*args) -> float:
     """Re-Escribir de forma recursiva."""
-    
-
+    primero, *resto = args  #guarda el primer elemento en primero y el resto de la lista en *resto
+    if len(resto) == 0:
+        return primero  #si no hay elementos en el resto, el primero es el mayor
+    b = maximo_recursivo(*resto)
+    return b if b > primero else primero
 
 
 # NO MODIFICAR - INICIO

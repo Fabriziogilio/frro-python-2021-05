@@ -6,8 +6,7 @@ def maximo_basico(a: float, b: float) -> float:
     Restricción: No utilizar la función max"""
     if a > b:
         return a
-    else: 
-        return b
+    return b
 
 
 # NO MODIFICAR - INICIO
