@@ -11,10 +11,8 @@ def es_palindromo(palabra: str) -> bool:
     #La notación de los slices tiene 3 partes: [start, stop, step]. 
     #En este caso, no se especifica start ni stop y el paso es hacia atrás.
     #Va desde el final hacia el principio contando de a uno
-    if palabra == palabra[::-1]:
-        return True 
-    else:
-        return False
+    return palabra == palabra[::-1]
+ 
    
 
 
@@ -38,8 +36,7 @@ def mitad(palabra: str) -> str:
     largo = len(palabra)
     if largo % 2 == 0:
         return palabra[:largo//2]
-    else:
-        return palabra[:(largo//2)+1]
+    return palabra[:(largo//2)+1]
  
     
 

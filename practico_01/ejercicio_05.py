@@ -12,10 +12,10 @@ def multiplicar_basico(numeros: Iterable[float]) -> float:
     resultado = 1
     if (len(numeros) == 0):
         return 0
-    else:
-        for num in numeros:
-            resultado = resultado * num
-        return resultado
+    
+    for num in numeros:
+        resultado *= num
+    return resultado
 
 
 # NO MODIFICAR - INICIO
