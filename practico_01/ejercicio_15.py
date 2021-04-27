@@ -55,7 +55,11 @@ def medir_tiempo(func: Callable[[], int]) -> Tuple[int, float]:
     Restricción: La función no debe tomar parámetros y por lo tanto se
     recomienda usar partial.
     """
-    pass # Completar
+    start = perf_counter()
+    result = partial(func) #no me funciona bien lo del partial creo...
+    elapsed = perf_counter() - start
+
+    return Tuple(result(), elapsed)
 
 
 # NO MODIFICAR - INICIO
