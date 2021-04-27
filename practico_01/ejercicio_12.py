@@ -72,9 +72,8 @@ def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tu
     """Re-Escribir utilizando zip.
     Referencia: https://docs.python.org/3/library/functions.html#zip
     """
-    lista=[]
-    for nombre, precio, id in zip(nombres, precios, ids):
-        lista.append((nombre, precio, id))
+    lista =  zip(nombres, precios, ids)
+
     return tuple(lista)
 
 
@@ -102,8 +101,8 @@ def combinar_zip_args(*args) -> Tuple[Any]:
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
     """
     lista=[]
-    for arg in zip(*args):
-        lista.append((arg))
+    lista =  zip(*args)
+    
     return tuple(lista)
 
 
