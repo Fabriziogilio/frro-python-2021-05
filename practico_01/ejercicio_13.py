@@ -13,6 +13,7 @@ from typing import Iterator, Callable
 
 initial = 0
 
+
 def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
     """Toma un número inicial y devuelve una función que cada vez que es
     invocada devuelve el número par siguiente al devuelto la última vez que
@@ -23,11 +24,11 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
         - Usar el modificador nonlocal
     """
 
-    if initial % 2  == 0:
+    if initial % 2 == 0:
         x = initial - 2
     else:
         x = initial - 1
-    
+   
     def funcion2():
         nonlocal x
         if x % 2  == 0:
@@ -90,6 +91,7 @@ def generar_pares_generator_send(initial: int = 0) -> Iterator[int]:
 
         if type(x) == int:
             initial = x
+
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
