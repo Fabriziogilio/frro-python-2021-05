@@ -28,10 +28,10 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
         x = initial - 2
     else:
         x = initial - 1
-   
+
     def funcion2():
         nonlocal x
-        if x % 2  == 0:
+        if x % 2 == 0:
             x += 2
         else:
             x += 1
@@ -62,7 +62,7 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
     """
     while True:
         yield initial
-        if initial % 2  == 0:
+        if initial % 2 == 0:
             initial += 2
         else:
             initial += 1
@@ -111,7 +111,7 @@ if __name__ == "__main__":
 
 def generar_pares_delegados(initial: int = 0) -> Iterator[int]:
     """CHALLENGE OPCIONAL: Re-Escribir utilizando Generadores delegados (yield from)"""
-    
+
     yield from generar_pares_generator()
 
 

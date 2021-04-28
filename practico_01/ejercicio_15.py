@@ -147,7 +147,7 @@ def memoized(func):
         cache_auxiliar[limite] = func(lista, limite)
 
         return cache_auxiliar[limite]
-        
+
     return guardar_auxiliar
 
 
@@ -187,13 +187,14 @@ funciones recursivas permiten ejecuciones más rápidas para las llamadas
 sucesivas.
 """
 
+
 @medir_tiempo
 @memoized
 def calcular_posibilidades_recursiva(lista: Sequence[int], limite: int) -> int:
     """Re-Escribir de manera recursiva"""
 
-    
-    pass # Completar
+
+    pass  # Completar
 
 
 # NO MODIFICAR - INICIO

@@ -20,7 +20,7 @@ def suma_cubo_pares_for(numeros: Iterable[int]) -> int:
             suma += i
 
     return suma
-    
+
 
 # NO MODIFICAR - INICIO
 assert suma_cubo_pares_for([1, 2, 3, 4, 5, 6]) == 288
