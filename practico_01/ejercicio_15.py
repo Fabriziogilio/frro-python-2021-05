@@ -136,10 +136,17 @@ def memoized(func):
     tiempo para la función calcular posibilidades. Prestar atención a los tiempo
     de ejecución
     """
-    memoria = func(lista, limite)
+    cache_auxiliar = {}
 
-    return memoria
+    def guardar_auxiliar(lista, limite):
+        if limite in cache_auxiliar:
+            return cache_auxiliar[limite]
 
+        cache_auxiliar[limite] = func(lista, limite)
+    
+        return cache_auxiliar[limite]
+        
+    return guardar_auxiliar
 
 
 @medir_tiempo
