@@ -21,7 +21,6 @@ def es_vocal_if(letra: str) -> bool:
     return False
 
 
-
 # NO MODIFICAR - INICIO
 assert es_vocal_if("a")
 assert not es_vocal_if("b")

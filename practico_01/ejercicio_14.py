@@ -16,11 +16,12 @@ def apply(lista: Iterable[int], func: Callable[[int], bool]) -> Iterable[bool]:
     """Toma una lista y una función que toma un parámetro y devuelve una lista
     con la función aplicada a todos los elementos."""
     lista_booleanos = []
-    
+
     for num in lista:
         lista_booleanos.append(func(num))
-        
+
     return lista_booleanos
+
 
 # NO MODIFICAR - INICIO
 def esta_entre_valores(x: int, min_: float, max_: float) -> bool:
@@ -38,7 +39,7 @@ Referencia: https://docs.python.org/3/library/functools.html#functools.partial
 lista = [3, 4, 5, 6, 7, 8]
 min_ = 4
 max_ = 7
-nueva_funcion = partial(esta_entre_valores, min_ = min_, max_ = max_)
+nueva_funcion = partial(esta_entre_valores, min_=min_, max_=max_)
 
 
 # NO MODIFICAR - INICIO

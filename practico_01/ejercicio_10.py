@@ -11,6 +11,7 @@ def tiene_pares_basico(numeros: Iterable[int]) -> bool:
             return True
     return False
 
+
 # NO MODIFICAR - INICIO
 assert tiene_pares_basico([1, 3, 5]) is False
 assert tiene_pares_basico([1, 3, 5, 6]) is True
@@ -27,12 +28,10 @@ def tiene_pares_for_else(numeros: Iterable[int]) -> bool:
     """
     for i in numeros:
         if i % 2 == 0:
-            break     
+            break
     else:
         return False
     return True
-        
-    
 
 
 # NO MODIFICAR - INICIO
