@@ -58,8 +58,9 @@ def medir_tiempo(func: Callable[[], int]) -> Tuple[int, float]:
     start = perf_counter()
     x = func()
     tiempo = perf_counter() - start
-    
+
     return (x, tiempo)
+
 
 # NO MODIFICAR - INICIO
 result, elapsed = medir_tiempo(partial(calcular_posibilidades, lista, limite))
@@ -84,6 +85,7 @@ def medir_tiempo(func: Callable[[Sequence[int], int], int]) -> Callable[[Sequenc
         return (x, tiempo)
 
     return funcion2
+
 
 # NO MODIFICAR - INICIO
 calcular_posibilidades_nueva = medir_tiempo(calcular_posibilidades)
@@ -143,7 +145,7 @@ def memoized(func):
             return cache_auxiliar[limite]
 
         cache_auxiliar[limite] = func(lista, limite)
-    
+
         return cache_auxiliar[limite]
         
     return guardar_auxiliar
@@ -185,11 +187,12 @@ funciones recursivas permiten ejecuciones más rápidas para las llamadas
 sucesivas.
 """
 
-
 @medir_tiempo
 @memoized
 def calcular_posibilidades_recursiva(lista: Sequence[int], limite: int) -> int:
     """Re-Escribir de manera recursiva"""
+
+    
     pass # Completar
 
 
