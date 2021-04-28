@@ -39,6 +39,7 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
 
     return funcion2
 
+
 # NO MODIFICAR - INICIO
 generador_pares = generar_pares_clousure(0)
 assert generador_pares() == 0
