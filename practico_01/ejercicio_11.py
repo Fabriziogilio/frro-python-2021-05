@@ -53,7 +53,7 @@ def suma_cubo_pares_sum_gen(numeros: Iterable[int]) -> int:
     y la función sum.
     Referencia: https://docs.python.org/3/reference/expressions.html#generator-expressions
     """
-    return sum((i**3 for i in numeros if i % 2 == 0))
+    return sum(i**3 for i in numeros if i % 2 == 0)
 
 
 # NO MODIFICAR - INICIO

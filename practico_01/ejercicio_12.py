@@ -26,15 +26,11 @@ def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
 
 
 # NO MODIFICAR - INICIO
-
-
 respuesta = (
     ("ventana", 100.48),
     ("lámpara", 16.42),
     ("shampoo", 5.2),
 )
-
-
 assert combinar_basico(nombre_articulos, precio_articulos) == respuesta
 # NO MODIFICAR - FIN
 

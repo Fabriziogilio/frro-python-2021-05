@@ -59,7 +59,7 @@ def medir_tiempo(func: Callable[[], int]) -> Tuple[int, float]:
     x = func()
     tiempo = perf_counter() - start
 
-    return (x, tiempo)
+    return x, tiempo
 
 
 # NO MODIFICAR - INICIO
@@ -141,6 +141,7 @@ def memoized(func):
     cache_auxiliar = {}
 
     def guardar_auxiliar(lista, limite):
+        nonlocal cache_auxiliar
         if limite in cache_auxiliar:
             return cache_auxiliar[limite]
 

@@ -11,8 +11,6 @@ otra manera.
 
 from typing import Iterator, Callable
 
-initial = 0
-
 
 def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
     """Toma un número inicial y devuelve una función que cada vez que es
@@ -33,8 +31,8 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
         nonlocal x
         if x % 2 == 0:
             x += 2
-        else:
-            x += 1
+            return x
+        x += 1
         return x
 
     return funcion2
@@ -62,8 +60,8 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
     Referencia: https://docs.python.org/3/howto/functional.html?highlight=generator#generators
     """
     while True:
-        yield initial
         if initial % 2 == 0:
+            yield initial
             initial += 2
         else:
             initial += 1

@@ -43,7 +43,10 @@ def operacion_multiple(a: float, b: float, multiplicar: bool) -> Union[float, st
     if multiplicar:
         return a * b
     elif multiplicar is False:
-        return "Operación no válida" if (b == 0) else a / b
+        if b == 0:
+            return "Operación no válida" 
+        else: 
+            return a / b
 
 
 # NO MODIFICAR - INICIO
