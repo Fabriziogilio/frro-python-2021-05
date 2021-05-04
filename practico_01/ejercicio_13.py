@@ -29,10 +29,7 @@ def generar_pares_clousure(initial: int = 0) -> Callable[[], int]:
 
     def funcion2():
         nonlocal x
-        if x % 2 == 0:
-            x += 2
-            return x
-        x += 1
+        x += 2
         return x
 
     return funcion2
@@ -59,12 +56,12 @@ def generar_pares_generator(initial: int = 0) -> Iterator[int]:
     """Re-Escribir utilizando Generadores
     Referencia: https://docs.python.org/3/howto/functional.html?highlight=generator#generators
     """
+    if initial % 2 != 0:
+        initial += 1
+
     while True:
-        if initial % 2 == 0:
-            yield initial
-            initial += 2
-        else:
-            initial += 1
+        yield initial
+        initial += 2
 
 
 # NO MODIFICAR - INICIO
