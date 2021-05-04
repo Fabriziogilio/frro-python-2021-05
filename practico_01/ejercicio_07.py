@@ -8,7 +8,10 @@ def es_palindromo(palabra: str) -> bool:
     Restricción: No utilizar bucles - Usar Slices de listas.
     Referencia: https://docs.python.org/3/tutorial/introduction.html#lists
     """
-    pass # Completar
+    # La notación de los slices tiene 3 partes: [start, stop, step].
+    # En este caso, no se especifica start ni stop y el paso es hacia atrás.
+    # Va desde el final hacia el principio contando de a uno
+    return palabra == palabra[::-1]
 
 
 # NO MODIFICAR - INICIO
@@ -28,7 +31,10 @@ def mitad(palabra: str) -> str:
     Restricción: No utilizar bucles - Usar Slices de listas.
     Referencia: https://docs.python.org/3/tutorial/introduction.html#lists
     """
-    pass # Completar
+    largo = len(palabra)
+    if largo % 2 == 0:
+        return palabra[:largo // 2]
+    return palabra[:(largo // 2) + 1]
 
 
 # NO MODIFICAR - INICIO
