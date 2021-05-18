@@ -8,7 +8,19 @@ class Rectangulo:
     Implementar la clase Rectangulo que contiene una base y una altura, y el
     método area.
     """
-    # Completar
+    def __init__(self, b: Optional[int] = None, h: Optional[int] = None):
+        self.base = b
+        self.altura = h
+
+    def area(self) -> int:
+        """
+        Si el objeto tiene valores definidos de base y altura
+        devuelve el área del rectángulo.
+        En caso contrario devuelve 0.
+        """
+        if self.base is not None and self.altura is not None:
+            return self.base * self.altura
+        return 0
 
 
 # NO MODIFICAR - INICIO
