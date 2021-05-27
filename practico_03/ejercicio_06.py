@@ -69,7 +69,7 @@ class ShoppingCart:
         return f"ShoppingCart({[art for art in self.articles]})"
 
     def __add__(self, otro: ShoppingCart)  -> ShoppingCart:
-        return ShoppingCart(self.articles + otro.articles)   
+        return ShoppingCart(self.articles + otro.articles)
 
 
 # NO MODIFICAR - INICIO
