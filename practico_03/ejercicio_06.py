@@ -68,7 +68,7 @@ class ShoppingCart:
     def __repr__(self) -> str:
         return f"ShoppingCart({[art for art in self.articles]})"
 
-    def __add__(self, otro: ShoppingCart)  -> ShoppingCart:
+    def __add__(self, otro: ShoppingCart) -> ShoppingCart:
         return ShoppingCart(self.articles + otro.articles)
 
 
