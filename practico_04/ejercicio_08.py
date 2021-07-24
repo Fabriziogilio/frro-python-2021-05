@@ -1,10 +1,12 @@
 """Base de datos SQL - Listar"""
 
+import sqlite3
 import datetime
 
-from practico_04.ejercicio_02 import agregar_persona
-from practico_04.ejercicio_06 import reset_tabla
-from practico_04.ejercicio_07 import agregar_peso
+from ejercicio_02 import agregar_persona
+from ejercicio_06 import reset_tabla
+from ejercicio_07 import agregar_peso
+from ejercicio_04 import buscar_persona
 
 
 def listar_pesos(id_persona):
@@ -30,8 +32,16 @@ def listar_pesos(id_persona):
 
     - False en caso de no cumplir con alguna validacion.
     """
-    return []
+    busqueda = buscar_persona(id_persona)
 
+    if busqueda is not False:
+        db = sqlite3.connect("base_datos.db")
+        cursor = db.cursor()
+
+        command = """SELECT fecha, peso FROM PersonaPeso WHERE idPersona = ?;"""
+        historial = cursor.execute(command, (id_persona))
+        return historial
+    return []
 
 # NO MODIFICAR - INICIO
 @reset_tabla
