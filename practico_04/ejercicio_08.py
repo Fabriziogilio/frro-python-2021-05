@@ -52,6 +52,7 @@ def listar_pesos(id_persona):
         return historial
     return False
 
+
 # NO MODIFICAR - INICIO
 @reset_tabla
 def pruebas():
@@ -65,7 +66,7 @@ def pruebas():
     ]
     assert pesos_juan == pesos_esperados
     # id incorrecto
-    assert listar_pesos(200) == False
+    assert listar_pesos(200) is False
 
 
 if __name__ == '__main__':
