@@ -9,26 +9,29 @@ from typing import List, Optional
 class DatosSocio():
 
     def __init__(self):
-        pass # Completar
+        engine = create_engine('sqlite:///:memory:')
+        Base.metadata.create_all(engine)
+        Session = sessionmaker(bind=engine)
+        self.session = Session()
 
     def buscar(self, id_socio: int) -> Optional[Socio]:
-        """Devuelve la instancia del socio, dado su id. Devuelve None si no 
+        """Devuelve la instancia del socio, dado su id. Devuelve None si no
         encuentra nada.
         """
-        pass # Completar
+        return self.session.query(Socio).filter(id_socio=id_socio)
 
     def buscar_dni(self, dni_socio: int) -> Optional[Socio]:
-        """Devuelve la instancia del socio, dado su dni. Devuelve None si no 
+        """Devuelve la instancia del socio, dado su dni. Devuelve None si no
         encuentra nada.
         """
-        pass # Completar
-        
+        return self.session.query(Socio).filter(dni_socio=dni_socio)
+
     def todos(self) -> List[Socio]:
         """Devuelve listado de todos los socios en la base de datos."""
-        pass # Completar
+        return self.session.query(Socio).all()
 
     def borrar_todos(self) -> bool:
-        """Borra todos los socios de la base de datos. Devuelve True si el 
+        """Borra todos los socios de la base de datos. Devuelve True si el
         borrado fue exitoso.
         """
         pass # Completar
@@ -38,7 +41,7 @@ class DatosSocio():
         pass # Completar
 
     def baja(self, id_socio: int) -> bool:
-        """Borra el socio especificado por el id. Devuelve True si el borrado 
+        """Borra el socio especificado por el id. Devuelve True si el borrado
         fue exitoso.
         """
         pass # Completar
@@ -48,7 +51,7 @@ class DatosSocio():
         modificado.
         """
         pass # Completar
-    
+ 
     def contarSocios(self) -> int:
         """Devuelve el total de socios que existen en la tabla"""
         pass # Completar
