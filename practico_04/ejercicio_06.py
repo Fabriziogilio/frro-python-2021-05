@@ -15,7 +15,8 @@ def crear_tabla_peso():
 
     cursor = db.cursor()
     command = """CREATE TABLE IF NOT EXISTS PersonaPeso(
-                idPersona INTEGER PRIMARY KEY AUTOINCREMENT,
+                idPersonaPeso INTEGER PRIMARY KEY AUTOINCREMENT,
+                idPersona INTEGER,
                 fecha DATETIME,
                 peso INT,
                 CONSTRAINT fk_Persona FOREIGN KEY (idPersona)

@@ -10,15 +10,15 @@ from ejercicio_04 import buscar_persona
 
 
 def listar_pesos(id_persona):
-    """Implementar la funcion listar_pesos, que devuelva el historial de pesos 
+    """Implementar la funcion listar_pesos, que devuelva el historial de pesos
     para una persona dada.
 
     Debe validar:
-    - Que el ID de la persona ingresada existe (reutilizando las funciones ya 
+    - Que el ID de la persona ingresada existe (reutilizando las funciones ya
      mplementadas).
 
     Debe devolver:
-    - Lista de (fecha, peso), donde fecha esta representado por el siguiente 
+    - Lista de (fecha, peso), donde fecha esta representado por el siguiente
     formato: AAAA-MM-DD.
 
     Ejemplo:
@@ -38,10 +38,19 @@ def listar_pesos(id_persona):
         db = sqlite3.connect("base_datos.db")
         cursor = db.cursor()
 
-        command = """SELECT fecha, peso FROM PersonaPeso WHERE idPersona = ?;"""
-        historial = cursor.execute(command, (id_persona))
+        command = """SELECT fecha, peso FROM PersonaPeso WHERE
+                    idPersona = ?;"""
+        cursor.execute(command, [id_persona])
+        fechas = cursor.fetchall()
+
+        historial = []
+        for registro in fechas:
+            reg = list(registro)
+            reg[0] = reg[0][0:10]
+            historial.append(tuple(reg))
+
         return historial
-    return []
+    return False
 
 # NO MODIFICAR - INICIO
 @reset_tabla

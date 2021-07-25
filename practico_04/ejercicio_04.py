@@ -8,11 +8,11 @@ from ejercicio_02 import agregar_persona
 
 
 def buscar_persona(id_persona):
-    """Implementar la funcion buscar_persona, que devuelve el registro de una 
-    persona basado en su id. El return es una tupla que contiene sus campos: 
-    id, nombre, nacimiento, dni y altura. Si no encuentra ningun registro, 
+    """Implementar la funcion buscar_persona, que devuelve el registro de una
+    persona basado en su id. El return es una tupla que contiene sus campos:
+    id, nombre, nacimiento, dni y altura. Si no encuentra ningun registro,
     devuelve False."""
-    
+
     db = sqlite3.connect("base_datos.db")
 
     cursor = db.cursor()
@@ -20,12 +20,12 @@ def buscar_persona(id_persona):
 
     cursor.execute(command, [id_persona])
     persona = cursor.fetchone()
-    
+
     db.close()
 
     if persona is not None:
         persona = list(persona)
-        persona[2] = datetime.datetime.strptime(persona[2], 
+        persona[2] = datetime.datetime.strptime(persona[2],
                                                 "%Y-%m-%d %H:%M:%S")
         persona = tuple(persona)
 

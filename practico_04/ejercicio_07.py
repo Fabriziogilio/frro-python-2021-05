@@ -7,14 +7,15 @@ from ejercicio_02 import agregar_persona
 from ejercicio_06 import reset_tabla
 from ejercicio_04 import buscar_persona
 
+
 def agregar_peso(id_persona, fecha, peso):
-    """Implementar la funcion agregar_peso, que inserte un registro en la tabla 
+    """Implementar la funcion agregar_peso, que inserte un registro en la tabla
     PersonaPeso.
 
     Debe validar:
-    - Que el ID de la persona ingresada existe (reutilizando las funciones ya 
+    - Que el ID de la persona ingresada existe (reutilizando las funciones ya
         implementadas).
-    - Que no existe de esa persona un registro de fecha posterior al que 
+    - Que no existe de esa persona un registro de fecha posterior al que
         queremos ingresar.
 
     Debe devolver:
@@ -24,14 +25,15 @@ def agregar_peso(id_persona, fecha, peso):
     busqueda = buscar_persona(id_persona)
 
     if busqueda is not False:
-
         db = sqlite3.connect("base_datos.db")
         cursor = db.cursor()
-        command1 = """SELECT * FROM PersonaPeso WHERE fecha>?;"""
-        result = cursor.execute(command1, (fecha))
+        command1 = """SELECT * FROM PersonaPeso WHERE fecha > ?;"""
+        cursor.execute(command1, [fecha])
+        persona_peso = cursor.fetchone()
 
-        if result is None:
-            command2 = """INSERT INTO PersonaPeso (id_Persona, fecha, peso) values (?,?,?);"""
+        if persona_peso is None:
+            command2 = """INSERT INTO PersonaPeso (idPersona, fecha, peso)
+                            values (?,?,?);"""
             cursor.execute(command2, (id_persona, fecha, peso))
             db.commit()
 
